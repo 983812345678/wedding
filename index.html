@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,25 +38,23 @@ body{
   justify-content:center;
   align-items:center;
   z-index:9999;
-  overflow:hidden;
 }
 
 .opening-content{
   text-align:center;
-  animation:fadeUp 1.5s ease;
   padding:20px;
+  animation:fadeUp 1.5s ease;
 }
 
 .om-symbol{
   font-size:4rem;
   color:#c69b3b;
-  margin-bottom:10px;
 }
 
 .mini-title{
   letter-spacing:8px;
   color:#8b6a50;
-  margin-bottom:25px;
+  margin:15px 0;
   font-size:14px;
 }
 
@@ -63,7 +62,6 @@ body{
   font-size:4rem;
   font-family:'Great Vibes',cursive;
   color:#3d2a20;
-  font-weight:400;
 }
 
 .wedding-title{
@@ -72,7 +70,6 @@ body{
   background:linear-gradient(45deg,#b8860b,#f3d27a,#c89b3c);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  margin-top:10px;
 }
 
 .line-design{
@@ -99,7 +96,6 @@ body{
   font-size:1rem;
   cursor:pointer;
   transition:0.4s;
-  box-shadow:0 10px 20px rgba(0,0,0,0.12);
 }
 
 .open-btn:hover{
@@ -116,9 +112,11 @@ body{
   flex-direction:column;
   text-align:center;
   padding:20px;
-  background:linear-gradient(rgba(255,248,240,.85),rgba(255,248,240,.9)),
-  url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1400&auto=format&fit=crop') center/cover;
   position:relative;
+
+  background:
+  linear-gradient(rgba(255,248,240,.85),rgba(255,248,240,.9)),
+  url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1400&auto=format&fit=crop') center/cover;
 }
 
 .hero::before{
@@ -132,7 +130,6 @@ body{
 .title{
   font-size:3rem;
   color:#8b5e34;
-  margin-bottom:15px;
   z-index:2;
 }
 
@@ -147,7 +144,6 @@ body{
 
 .date{
   font-size:1.3rem;
-  letter-spacing:2px;
   margin-bottom:20px;
   z-index:2;
 }
@@ -158,7 +154,7 @@ body{
   z-index:2;
 }
 
-/* GENERAL */
+/* SECTION */
 
 section{
   padding:80px 20px;
@@ -167,20 +163,18 @@ section{
 .section-title{
   text-align:center;
   font-size:2.5rem;
-  color:#8b5e34;
   margin-bottom:50px;
-  animation:fadeUp 1.5s ease;
+  color:#8b5e34;
 }
 
 .card{
-  background:#fff;
+  background:white;
   max-width:1000px;
   margin:auto;
   padding:40px;
   border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
   border:2px solid #e2c39c;
-  animation:fadeUp 1.5s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 /* DETAILS */
@@ -201,7 +195,6 @@ section{
 
 .detail-box h3{
   margin-bottom:15px;
-  color:#8b5e34;
 }
 
 /* COUNTDOWN */
@@ -209,20 +202,19 @@ section{
 .countdown{
   display:flex;
   justify-content:center;
-  gap:20px;
   flex-wrap:wrap;
+  gap:20px;
 }
 
 .time-box{
   width:120px;
   height:120px;
-  background:#fff;
+  background:white;
   border-radius:20px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
   border:2px solid #e0be95;
 }
 
@@ -232,6 +224,10 @@ section{
 }
 
 /* SCRATCH */
+
+.scratch-wrapper{
+  margin-bottom:50px;
+}
 
 .scratch-container{
   position:relative;
@@ -249,7 +245,7 @@ section{
   object-fit:cover;
 }
 
-canvas{
+.scratchCanvas{
   position:absolute;
   top:0;
   left:0;
@@ -291,10 +287,7 @@ footer{
 
 .hearts{
   position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
+  inset:0;
   pointer-events:none;
   overflow:hidden;
 }
@@ -314,7 +307,7 @@ footer{
 .hearts span:nth-child(5){left:70%;animation-duration:9s;}
 .hearts span:nth-child(6){left:85%;animation-duration:11s;}
 
-/* ANIMATION */
+/* ANIMATIONS */
 
 @keyframes fadeUp{
   from{
@@ -345,7 +338,7 @@ footer{
     opacity:1;
   }
   100%{
-    transform:translateY(-800px);
+    transform:translateY(-900px);
     opacity:0;
   }
 }
@@ -366,9 +359,15 @@ footer{
     font-size:3rem;
   }
 
+  .scratch-container{
+    width:100%;
+    height:300px;
+  }
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -405,7 +404,7 @@ footer{
 
 </div>
 
-<!-- FLOATING HEARTS -->
+<!-- HEARTS -->
 
 <div class="hearts">
   <span>❤</span>
@@ -420,7 +419,9 @@ footer{
 
 <section class="hero">
 
-  <h1 class="title">Wedding Invitation</h1>
+  <h1 class="title">
+    Wedding Invitation
+  </h1>
 
   <div class="couple">
     Senthil Kumar <br>&<br> Jeyalakshmi
@@ -433,7 +434,7 @@ footer{
   <p class="text">
     With the blessings of Lord Ganesha and our beloved parents,
     we cordially invite you to join us in celebrating our wedding ceremony.
-    Your presence will make our special day more memorable and meaningful.
+    Your presence will make our special day memorable.
   </p>
 
 </section>
@@ -442,7 +443,9 @@ footer{
 
 <section>
 
-  <h2 class="section-title">Wedding Details</h2>
+  <h2 class="section-title">
+    Wedding Details
+  </h2>
 
   <div class="card details-grid">
 
@@ -456,6 +459,12 @@ footer{
       <h3>Venue</h3>
       <p>Kundrakudi Arulmigu Shanmuganathan Temple</p>
       <p>Kundrakudi, Tamil Nadu</p>
+    </div>
+
+    <div class="detail-box">
+      <h3>Reception</h3>
+      <p>08 June 2026</p>
+      <p>6:00 PM – 9:00 PM</p>
     </div>
 
   </div>
@@ -504,17 +513,49 @@ footer{
     Scratch To Reveal Venue
   </h2>
 
-  <div class="card" style="text-align:center;max-width:420px;">
+  <div class="card" style="text-align:center;max-width:900px;">
 
-    <p style="margin-bottom:20px;color:#8b5e34;">
-      Scratch the golden card to reveal the wedding location QR code ✨
-    </p>
+    <!-- MUHURTHAM -->
 
-    <div class="scratch-container">
+    <div class="scratch-wrapper">
 
-      <img src="qr.png" class="qr-image">
+      <p style="margin-bottom:20px;color:#8b5e34;">
+        Scratch to reveal Muhurtham location ✨
+      </p>
 
-      <canvas id="scratchCanvas"></canvas>
+      <div class="scratch-container">
+
+        <img src="image/qr.png" class="qr-image">
+
+        <canvas class="scratchCanvas"></canvas>
+
+      </div>
+
+      <h3 style="margin-top:15px;">
+        Muhurtham Location
+      </h3>
+
+    </div>
+
+    <!-- RECEPTION -->
+
+    <div class="scratch-wrapper">
+
+      <p style="margin-bottom:20px;color:#8b5e34;">
+        Scratch to reveal Reception location ✨
+      </p>
+
+      <div class="scratch-container">
+
+        <img src="image/2.jpeg" class="qr-image">
+
+        <canvas class="scratchCanvas"></canvas>
+
+      </div>
+
+      <h3 style="margin-top:15px;">
+        Reception Location
+      </h3>
 
     </div>
 
@@ -550,123 +591,6 @@ footer{
   Made with ❤️ for our Wedding Celebration
 </footer>
 
-<!-- COUNTDOWN -->
-
-<script>
-
-const weddingDate = new Date("May 27, 2026 09:00:00").getTime();
-
-setInterval(() => {
-
-  const now = new Date().getTime();
-
-  const distance = weddingDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById('days').innerHTML = days;
-  document.getElementById('hours').innerHTML = hours;
-  document.getElementById('minutes').innerHTML = minutes;
-  document.getElementById('seconds').innerHTML = seconds;
-
-},1000);
-
-</script>
-
-<!-- SCRATCH -->
-
-<script>
-
-const canvas = document.getElementById("scratchCanvas");
-
-const ctx = canvas.getContext("2d");
-
-const container = document.querySelector(".scratch-container");
-
-canvas.width = container.offsetWidth;
-canvas.height = container.offsetHeight;
-
-ctx.fillStyle = "#cfa76e";
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
-ctx.fillStyle = "#ffffff";
-ctx.font = "bold 28px Arial";
-ctx.textAlign = "center";
-
-ctx.fillText(
-  "Scratch Me",
-  canvas.width/2,
-  canvas.height/2
-);
-
-let isDrawing = false;
-
-function scratch(x,y){
-
-  ctx.globalCompositeOperation = "destination-out";
-
-  ctx.beginPath();
-
-  ctx.arc(x,y,25,0,Math.PI*2);
-
-  ctx.fill();
-
-}
-
-canvas.addEventListener("mousedown",()=>{
-  isDrawing = true;
-});
-
-canvas.addEventListener("mouseup",()=>{
-  isDrawing = false;
-});
-
-canvas.addEventListener("mousemove",(e)=>{
-
-  if(!isDrawing) return;
-
-  const rect = canvas.getBoundingClientRect();
-
-  scratch(
-    e.clientX - rect.left,
-    e.clientY - rect.top
-  );
-
-});
-
-canvas.addEventListener("touchstart",()=>{
-  isDrawing = true;
-});
-
-canvas.addEventListener("touchend",()=>{
-  isDrawing = false;
-});
-
-canvas.addEventListener("touchmove",(e)=>{
-
-  e.preventDefault();
-
-  if(!isDrawing) return;
-
-  const rect = canvas.getBoundingClientRect();
-
-  const touch = e.touches[0];
-
-  scratch(
-    touch.clientX - rect.left,
-    touch.clientY - rect.top
-  );
-
-},{passive:false});
-
-</script>
-
 <!-- OPEN SCREEN -->
 
 <script>
@@ -677,15 +601,133 @@ function openInvitation(){
 
   screen.style.opacity = '0';
 
-  screen.style.transition = '1s';
-
   setTimeout(()=>{
-
     screen.style.display = 'none';
-
   },1000);
 
 }
+
+</script>
+
+<!-- COUNTDOWN -->
+
+<script>
+
+const weddingDate = new Date("May 27, 2026 09:00:00").getTime();
+
+setInterval(()=>{
+
+  const now = new Date().getTime();
+
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000*60*60*24));
+
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+
+<!-- SCRATCH -->
+
+<script>
+
+const canvases = document.querySelectorAll(".scratchCanvas");
+
+canvases.forEach((canvas)=>{
+
+  const ctx = canvas.getContext("2d");
+
+  const container = canvas.parentElement;
+
+  canvas.width = container.offsetWidth;
+  canvas.height = container.offsetHeight;
+
+  ctx.fillStyle = "#cfa76e";
+
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.fillStyle = "#ffffff";
+  ctx.font = "bold 28px Arial";
+  ctx.textAlign = "center";
+
+  ctx.fillText(
+    "Scratch Me",
+    canvas.width/2,
+    canvas.height/2
+  );
+
+  let isDrawing = false;
+
+  function scratch(x,y){
+
+    ctx.globalCompositeOperation = "destination-out";
+
+    ctx.beginPath();
+
+    ctx.arc(x,y,25,0,Math.PI*2);
+
+    ctx.fill();
+
+  }
+
+  canvas.addEventListener("mousedown",()=>{
+    isDrawing = true;
+  });
+
+  canvas.addEventListener("mouseup",()=>{
+    isDrawing = false;
+  });
+
+  canvas.addEventListener("mousemove",(e)=>{
+
+    if(!isDrawing) return;
+
+    const rect = canvas.getBoundingClientRect();
+
+    scratch(
+      e.clientX - rect.left,
+      e.clientY - rect.top
+    );
+
+  });
+
+  canvas.addEventListener("touchstart",()=>{
+    isDrawing = true;
+  });
+
+  canvas.addEventListener("touchend",()=>{
+    isDrawing = false;
+  });
+
+  canvas.addEventListener("touchmove",(e)=>{
+
+    e.preventDefault();
+
+    if(!isDrawing) return;
+
+    const rect = canvas.getBoundingClientRect();
+
+    const touch = e.touches[0];
+
+    scratch(
+      touch.clientX - rect.left,
+      touch.clientY - rect.top
+    );
+
+  },{passive:false});
+
+});
 
 </script>
 
