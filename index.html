@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#fdf8f2;
+  color:#5c4033;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* OPENING SCREEN */
+
+.opening-screen{
+  position:fixed;
+  inset:0;
+  background:#f8f5f0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  overflow:hidden;
+}
+
+.opening-content{
+  text-align:center;
+  animation:fadeUp 1.5s ease;
+  padding:20px;
+}
+
+.om-symbol{
+  font-size:4rem;
+  color:#c69b3b;
+  margin-bottom:10px;
+}
+
+.mini-title{
+  letter-spacing:8px;
+  color:#8b6a50;
+  margin-bottom:25px;
+  font-size:14px;
+}
+
+.invite-title{
+  font-size:4rem;
+  font-family:'Great Vibes',cursive;
+  color:#3d2a20;
+  font-weight:400;
+}
+
+.wedding-title{
+  font-size:5rem;
+  font-family:'Great Vibes',cursive;
+  background:linear-gradient(45deg,#b8860b,#f3d27a,#c89b3c);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-top:10px;
+}
+
+.line-design{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin:30px 0;
+  color:#c89b3c;
+}
+
+.line-design span{
+  width:70px;
+  height:1px;
+  background:#d9b25e;
+}
+
+.open-btn{
+  padding:18px 45px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(45deg,#b8860b,#e0c06d,#b8860b);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
+
+.open-btn:hover{
+  transform:scale(1.08);
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+  background:linear-gradient(rgba(255,248,240,.85),rgba(255,248,240,.9)),
+  url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1400&auto=format&fit=crop') center/cover;
+  position:relative;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:20px;
+  border:3px solid #c49b66;
+  border-radius:20px;
+}
+
+.title{
+  font-size:3rem;
+  color:#8b5e34;
+  margin-bottom:15px;
+  z-index:2;
+}
+
+.couple{
+  font-family:'Great Vibes',cursive;
+  font-size:5rem;
+  color:#b06d3d;
+  margin:20px 0;
+  z-index:2;
+  animation:glow 3s infinite;
+}
+
+.date{
+  font-size:1.3rem;
+  letter-spacing:2px;
+  margin-bottom:20px;
+  z-index:2;
+}
+
+.text{
+  max-width:700px;
+  line-height:1.8;
+  z-index:2;
+}
+
+/* GENERAL */
+
+section{
+  padding:80px 20px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.5rem;
+  color:#8b5e34;
+  margin-bottom:50px;
+  animation:fadeUp 1.5s ease;
+}
+
+.card{
+  background:#fff;
+  max-width:1000px;
+  margin:auto;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  border:2px solid #e2c39c;
+  animation:fadeUp 1.5s ease;
+}
+
+/* DETAILS */
+
+.details-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.detail-box{
+  background:#fff8ef;
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  border:1px solid #e3c29b;
+}
+
+.detail-box h3{
+  margin-bottom:15px;
+  color:#8b5e34;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.time-box{
+  width:120px;
+  height:120px;
+  background:#fff;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  border:2px solid #e0be95;
+}
+
+.time-box h2{
+  font-size:2.5rem;
+  color:#b06d3d;
+}
+
+/* SCRATCH */
+
+.scratch-container{
+  position:relative;
+  width:320px;
+  height:320px;
+  margin:auto;
+  border-radius:20px;
+  overflow:hidden;
+  border:4px solid #d9b382;
+}
+
+.qr-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+/* RSVP */
+
+.rsvp{
+  text-align:center;
+}
+
+.rsvp a{
+  display:inline-block;
+  margin-top:20px;
+  padding:15px 35px;
+  background:#b06d3d;
+  color:white;
+  text-decoration:none;
+  border-radius:40px;
+  transition:0.4s;
+}
+
+.rsvp a:hover{
+  transform:scale(1.08);
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#8b5e34;
+  color:white;
+}
+
+/* HEARTS */
+
+.hearts{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.hearts span{
+  position:absolute;
+  bottom:-100px;
+  color:#e8a598;
+  font-size:20px;
+  animation:floatingHearts linear infinite;
+}
+
+.hearts span:nth-child(1){left:10%;animation-duration:8s;}
+.hearts span:nth-child(2){left:20%;animation-duration:12s;}
+.hearts span:nth-child(3){left:35%;animation-duration:10s;}
+.hearts span:nth-child(4){left:50%;animation-duration:14s;}
+.hearts span:nth-child(5){left:70%;animation-duration:9s;}
+.hearts span:nth-child(6){left:85%;animation-duration:11s;}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes glow{
+  0%{
+    text-shadow:0 0 5px #d4a373;
+  }
+  50%{
+    text-shadow:0 0 20px #d4a373;
+  }
+  100%{
+    text-shadow:0 0 5px #d4a373;
+  }
+}
+
+@keyframes floatingHearts{
+  0%{
+    transform:translateY(0);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-800px);
+    opacity:0;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .couple{
+    font-size:3rem;
+  }
+
+  .invite-title{
+    font-size:2.5rem;
+  }
+
+  .wedding-title{
+    font-size:3rem;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- OPENING SCREEN -->
+
+<div class="opening-screen" id="openingScreen">
+
+  <div class="opening-content">
+
+    <div class="om-symbol">ॐ</div>
+
+    <p class="mini-title">SHUBH VIVAH</p>
+
+    <h1 class="invite-title">
+      You are invited to a
+    </h1>
+
+    <h2 class="wedding-title">
+      Wedding Celebration
+    </h2>
+
+    <div class="line-design">
+      <span></span>
+      ✿
+      <span></span>
+    </div>
+
+    <button class="open-btn" onclick="openInvitation()">
+      Tap to Open Invitation
+    </button>
+
+  </div>
+
+</div>
+
+<!-- FLOATING HEARTS -->
+
+<div class="hearts">
+  <span>❤</span>
+  <span>❤</span>
+  <span>❤</span>
+  <span>❤</span>
+  <span>❤</span>
+  <span>❤</span>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <h1 class="title">Wedding Invitation</h1>
+
+  <div class="couple">
+    Senthil Kumar <br>&<br> Jeyalakshmi
+  </div>
+
+  <div class="date">
+    27 May 2026 | Wednesday
+  </div>
+
+  <p class="text">
+    With the blessings of Lord Ganesha and our beloved parents,
+    we cordially invite you to join us in celebrating our wedding ceremony.
+    Your presence will make our special day more memorable and meaningful.
+  </p>
+
+</section>
+
+<!-- DETAILS -->
+
+<section>
+
+  <h2 class="section-title">Wedding Details</h2>
+
+  <div class="card details-grid">
+
+    <div class="detail-box">
+      <h3>Muhurtham</h3>
+      <p>27 May 2026</p>
+      <p>9:00 AM – 10:30 AM</p>
+    </div>
+
+    <div class="detail-box">
+      <h3>Venue</h3>
+      <p>Kundrakudi Arulmigu Shanmuganathan Temple</p>
+      <p>Kundrakudi, Tamil Nadu</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section>
+
+  <h2 class="section-title">
+    Countdown To Wedding
+  </h2>
+
+  <div class="countdown">
+
+    <div class="time-box">
+      <h2 id="days">0</h2>
+      <p>Days</p>
+    </div>
+
+    <div class="time-box">
+      <h2 id="hours">0</h2>
+      <p>Hours</p>
+    </div>
+
+    <div class="time-box">
+      <h2 id="minutes">0</h2>
+      <p>Minutes</p>
+    </div>
+
+    <div class="time-box">
+      <h2 id="seconds">0</h2>
+      <p>Seconds</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SCRATCH -->
+
+<section>
+
+  <h2 class="section-title">
+    Scratch To Reveal Venue
+  </h2>
+
+  <div class="card" style="text-align:center;max-width:420px;">
+
+    <p style="margin-bottom:20px;color:#8b5e34;">
+      Scratch the golden card to reveal the wedding location QR code ✨
+    </p>
+
+    <div class="scratch-container">
+
+      <img src="image/qr.png" class="qr-image">
+
+      <canvas id="scratchCanvas"></canvas>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- RSVP -->
+
+<section>
+
+  <h2 class="section-title">
+    RSVP
+  </h2>
+
+  <div class="card rsvp">
+
+    <p>
+      We would be delighted to have you with us on our special day.
+    </p>
+
+    <a href="https://wa.me/919500836432">
+      Confirm Attendance
+    </a>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  Made with ❤️ for our Wedding Celebration
+</footer>
+
+<!-- COUNTDOWN -->
+
+<script>
+
+const weddingDate = new Date("May 27, 2026 09:00:00").getTime();
+
+setInterval(() => {
+
+  const now = new Date().getTime();
+
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById('days').innerHTML = days;
+  document.getElementById('hours').innerHTML = hours;
+  document.getElementById('minutes').innerHTML = minutes;
+  document.getElementById('seconds').innerHTML = seconds;
+
+},1000);
+
+</script>
+
+<!-- SCRATCH -->
+
+<script>
+
+const canvas = document.getElementById("scratchCanvas");
+
+const ctx = canvas.getContext("2d");
+
+const container = document.querySelector(".scratch-container");
+
+canvas.width = container.offsetWidth;
+canvas.height = container.offsetHeight;
+
+ctx.fillStyle = "#cfa76e";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle = "#ffffff";
+ctx.font = "bold 28px Arial";
+ctx.textAlign = "center";
+
+ctx.fillText(
+  "Scratch Me",
+  canvas.width/2,
+  canvas.height/2
+);
+
+let isDrawing = false;
+
+function scratch(x,y){
+
+  ctx.globalCompositeOperation = "destination-out";
+
+  ctx.beginPath();
+
+  ctx.arc(x,y,25,0,Math.PI*2);
+
+  ctx.fill();
+
+}
+
+canvas.addEventListener("mousedown",()=>{
+  isDrawing = true;
+});
+
+canvas.addEventListener("mouseup",()=>{
+  isDrawing = false;
+});
+
+canvas.addEventListener("mousemove",(e)=>{
+
+  if(!isDrawing) return;
+
+  const rect = canvas.getBoundingClientRect();
+
+  scratch(
+    e.clientX - rect.left,
+    e.clientY - rect.top
+  );
+
+});
+
+canvas.addEventListener("touchstart",()=>{
+  isDrawing = true;
+});
+
+canvas.addEventListener("touchend",()=>{
+  isDrawing = false;
+});
+
+canvas.addEventListener("touchmove",(e)=>{
+
+  e.preventDefault();
+
+  if(!isDrawing) return;
+
+  const rect = canvas.getBoundingClientRect();
+
+  const touch = e.touches[0];
+
+  scratch(
+    touch.clientX - rect.left,
+    touch.clientY - rect.top
+  );
+
+},{passive:false});
+
+</script>
+
+<!-- OPEN SCREEN -->
+
+<script>
+
+function openInvitation(){
+
+  const screen = document.getElementById('openingScreen');
+
+  screen.style.opacity = '0';
+
+  screen.style.transition = '1s';
+
+  setTimeout(()=>{
+
+    screen.style.display = 'none';
+
+  },1000);
+
+}
+
+</script>
+
+</body>
+</html>
