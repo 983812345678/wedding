@@ -28,6 +28,28 @@ body{
   scroll-behavior:smooth;
 }
 
+/* MUSIC BUTTON */
+
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:99999;
+  padding:12px 20px;
+  border:none;
+  border-radius:50px;
+  background:#b06d3d;
+  color:white;
+  cursor:pointer;
+  font-size:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  transition:0.4s;
+}
+
+.music-btn:hover{
+  transform:scale(1.08);
+}
+
 /* OPENING SCREEN */
 
 .opening-screen{
@@ -372,6 +394,18 @@ footer{
 
 <body>
 
+<!-- MUSIC -->
+
+<audio id="bgMusic" autoplay loop>
+
+  <source src="mi.mpeg" type="audio/mpeg">
+
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+  🔊 Music
+</button>
+
 <!-- OPENING SCREEN -->
 
 <div class="opening-screen" id="openingScreen">
@@ -424,7 +458,7 @@ footer{
   </h1>
 
   <div class="couple">
-    Senthil Kumar <br>&<br> Jayalakshmi
+    Senthil Kumar <br>&<br> Jeyalakshmi
   </div>
 
   <div class="date">
@@ -466,14 +500,6 @@ footer{
       <p>08 June 2026</p>
       <p>6:00 PM – 9:00 PM</p>
     </div>
-
-    
-    <div class="detail-box">
-      <h3>Reception Place</h3>
-      <p>om murugan nagar,kallipalayam,ss kulam</p>
-      <p>Coimbatore, Tamil Nadu</p>
-    </div>
-
 
   </div>
 
@@ -523,8 +549,6 @@ footer{
 
   <div class="card" style="text-align:center;max-width:900px;">
 
-    <!-- MUHURTHAM -->
-
     <div class="scratch-wrapper">
 
       <p style="margin-bottom:20px;color:#8b5e34;">
@@ -533,7 +557,7 @@ footer{
 
       <div class="scratch-container">
 
-        <img src="qr.png" class="qr-image">
+        <img src="image/qr.png" class="qr-image">
 
         <canvas class="scratchCanvas"></canvas>
 
@@ -545,8 +569,6 @@ footer{
 
     </div>
 
-    <!-- RECEPTION -->
-
     <div class="scratch-wrapper">
 
       <p style="margin-bottom:20px;color:#8b5e34;">
@@ -555,7 +577,7 @@ footer{
 
       <div class="scratch-container">
 
-        <img src="2.jpeg" class="qr-image">
+        <img src="image/2.jpeg" class="qr-image">
 
         <canvas class="scratchCanvas"></canvas>
 
@@ -614,6 +636,40 @@ function openInvitation(){
   },1000);
 
 }
+
+</script>
+
+<!-- MUSIC -->
+
+<script>
+
+const music = document.getElementById("bgMusic");
+
+const musicBtn = document.getElementById("musicBtn");
+
+function toggleMusic(){
+
+  if(music.paused){
+
+    music.play();
+
+    musicBtn.innerHTML = "🔊 Music";
+
+  }else{
+
+    music.pause();
+
+    musicBtn.innerHTML = "🔇 Muted";
+
+  }
+
+}
+
+document.body.addEventListener("click",()=>{
+
+  music.play();
+
+},{once:true});
 
 </script>
 
